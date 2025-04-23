@@ -1,15 +1,34 @@
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Double principle;
+        Double rate;
+        Integer timesComp;
+        Integer years;
+        Double amount;
+
+        Scanner scanner = new Scanner(System.in);
+
+      System.out.println("Enter principle amount :");
+      principle = scanner.nextDouble();
+
+        System.out.println("Enter interest rate");
+        rate = scanner.nextDouble() / 100 ;
+
+        System.out.println("Enter Number of times compounded per year");
+        timesComp = scanner.nextInt();
+
+        System.out.println("Enter number of years");
+        years = scanner.nextInt();
+
+        amount = principle * Math.pow(1 + rate/timesComp, years);
+
+        System.out.println("Your amount is " + amount + "$");
+
+        scanner.close();
     }
 }
